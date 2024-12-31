@@ -94,7 +94,7 @@ public class RestaurantServiceImp implements RestaurantService{
         if(restaurant == null){
             throw new Exception("Restaurant not found with owner id " + userId);
         }
-        return null;
+        return restaurant;
     }
 
     @Override
