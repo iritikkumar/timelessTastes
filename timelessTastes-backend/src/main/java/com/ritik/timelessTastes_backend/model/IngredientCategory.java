@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class IngredientsCategory {
+public class IngredientCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,6 +25,6 @@ public class IngredientsCategory {
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
-    private List<IngredientsItem> ingredients = new ArrayList<>();
+    private List<IngredientItem> ingredients = new ArrayList<>();
 
 }
