@@ -6,12 +6,13 @@ import com.ritik.timelessTastes_backend.model.Food;
 import com.ritik.timelessTastes_backend.model.User;
 import com.ritik.timelessTastes_backend.repository.CartItemRepository;
 import com.ritik.timelessTastes_backend.repository.CartRepository;
-import com.ritik.timelessTastes_backend.repository.FoodRepository;
 import com.ritik.timelessTastes_backend.request.AddCartItemRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class CartServiceImp implements CartService{
 
     @Autowired
@@ -110,8 +111,9 @@ public class CartServiceImp implements CartService{
     }
 
     @Override
-    public Cart clearCart(Long userId) throws Exception {
-        Cart cart = findCartByUserId(userId);
+    public Cart clearCart(String jwt) throws Exception {
+        User user = userService.findUserByJwtToken(jwt);
+        Cart cart = findCartByUserId(user.getId());
         cart.getItems().clear();
         return cartRepository.save(cart);
     }

@@ -2,7 +2,6 @@ package com.ritik.timelessTastes_backend.service;
 
 import com.ritik.timelessTastes_backend.model.Cart;
 import com.ritik.timelessTastes_backend.model.CartItem;
-import com.ritik.timelessTastes_backend.model.User;
 import com.ritik.timelessTastes_backend.request.AddCartItemRequest;
 
 public interface CartService {
@@ -19,5 +18,5 @@ public interface CartService {
 
     public Cart findCartByUserId(Long userId) throws Exception;
 
-    public Cart clearCart(Long userId) throws Exception;
+    public Cart clearCart(String jwt) throws Exception;
 }
