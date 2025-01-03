@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class IngredientsItem {
+public class IngredientItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -18,7 +18,7 @@ public class IngredientsItem {
     private String name;
 
     @ManyToOne
-    private IngredientsCategory category;
+    private IngredientCategory category;
 
     @JsonIgnore
     @ManyToOne

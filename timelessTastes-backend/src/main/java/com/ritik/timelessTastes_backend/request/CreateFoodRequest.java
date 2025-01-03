@@ -1,7 +1,7 @@
 package com.ritik.timelessTastes_backend.request;
 
 import com.ritik.timelessTastes_backend.model.Category;
-import com.ritik.timelessTastes_backend.model.IngredientsItem;
+import com.ritik.timelessTastes_backend.model.IngredientItem;
 import lombok.Data;
 
 import java.util.List;
@@ -18,5 +18,5 @@ public class CreateFoodRequest {
     private Long restaurantId;
     private boolean veg;
     private boolean seasonal;
-    private List<IngredientsItem> ingredients;
+    private List<IngredientItem> ingredients;
 }
